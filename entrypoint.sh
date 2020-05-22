@@ -27,10 +27,10 @@ fi
 JEKYLL_ENV=production bundle exec jekyll build -s ${JEKYLL_SRC} -d build
 echo "Jekyll build done"
 if [ -z "${ALGOLIA_API_KEY}" ]; then
-  echo "::debug ::ALGOLIA_API_KEY not defined. skipping update of algolia index"
+  echo "ALGOLIA_API_KEY not defined. skipping update of algolia index"
 else
   bundle exec jekyll algolia -s ${JEKYLL_SRC}
-  echo "::debug ::Algolia index updated"
+  echo "Algolia index updated"
 fi
 
 cd build
